@@ -1,0 +1,17 @@
+{
+    "name": "reputationd",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint ./app.js",
+        "build": "npm run lint && ncc build app.js --minify -o dist"
+    },
+    "dependencies": {
+        "archiver": "5.3.1",
+        "evernode-js-client": "0.6.52",
+        "hotpocket-js-client": "0.5.6",
+        "uuid": "9.0.1",
+        "ws": "8.17.0"
+    },
+    "devDependencies": {
+        "eslint": "8.3.0"
+    }
+}

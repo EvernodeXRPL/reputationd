@@ -1,0 +1,5 @@
+node_modules
+dist
+log
+reputationd.cfg
+secret.cfg
