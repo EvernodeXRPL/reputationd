@@ -81,7 +81,7 @@ async function main() {
 
             new Setup().checkConfigChanges();
 
-            console.log('Starting the Evernode Xahau reputationd.' + (appenv.IS_DEV_MODE ? ' (in dev mode)' : '') + ' --- patch applied ---');
+            console.log('Starting the Evernode Xahau reputationd.' + (appenv.IS_DEV_MODE ? ' (in dev mode)' : ''));
             console.log('Data dir: ' + appenv.DATA_DIR);
             console.log('Using message board config: ' + appenv.MB_XRPL_CONFIG_PATH);
 
