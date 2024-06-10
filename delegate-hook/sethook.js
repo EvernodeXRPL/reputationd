@@ -19,18 +19,19 @@ if (process.env.DEV_MODE == 1 && !fs.existsSync(CONFIG_PATH)) {
     cfg = {
         "xrpl": {
             "address": "",
-            "secret": ""
+            "secretPath": ""
         },
         "network": ""
     }
     fs.writeFileSync(CONFIG_PATH, JSON.stringify(cfg, null, 2));
+    process.exit(0);
 }
 else {
     cfg = JSON.parse(fs.readFileSync(CONFIG_PATH));
 }
 
-const delegateSecret = cfg.xrpl.secret;
-
+const delegateSecretData = JSON.parse(fs.readFileSync(cfg.xrpl.secretPath));
+const delegateSecret = delegateSecretData.xrpl.secret;
 init(cfg.network).then(() => {
     const account = xrpljs.Wallet.fromSeed(delegateSecret)
     const binary = fs.readFileSync(WASM_PATH).toString('hex').toUpperCase();
