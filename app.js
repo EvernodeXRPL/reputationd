@@ -31,18 +31,18 @@ async function main() {
 
     if (process.argv.length >= 3) {
         try {
-            if (process.argv.length >= 6 && process.argv[2] === 'new') {
+            if (process.argv.length >= 5 && process.argv[2] === 'new') {
                 const accountAddress = process.argv[3];
                 const accountSecretPath = process.argv[4];
-                const accountMode = parseInt(process.argv[5]);
                 const setup = new Setup();
-                setup.newConfig(accountAddress, accountSecretPath, accountMode);
+                setup.newConfig(accountAddress, accountSecretPath);
             }
             else if (process.argv.length >= 4 && process.argv[2] === 'wait-for-funds') {
                 await new Setup().waitForFunds(process.argv[3], parseFloat(process.argv[4]));
             }
-            else if (process.argv.length >= 2 && process.argv[2] === 'prepare') {
-                await new Setup().prepareReputationAccount();
+            else if (process.argv.length >= 3 && process.argv[2] === 'prepare') {
+                const accountMode = parseInt(process.argv[3]);
+                await new Setup().prepareReputationAccount(accountMode);
             } else if (process.argv.length >= 4 && process.argv[2] === 'update-config') {
                 // TODO: Remove this in 0.8.4.
             }
