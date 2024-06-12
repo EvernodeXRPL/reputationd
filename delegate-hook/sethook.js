@@ -11,8 +11,6 @@ const CONFIG_PATH = appenv.CONFIG_PATH;
 
 const WASM_PATH = `${appenv.WASM_DIR_PATH}/delegate.wasm`;
 
-console.log(WASM_PATH);
-
 let cfg;
 
 if (process.env.DEV_MODE == 1 && !fs.existsSync(CONFIG_PATH)) {
