@@ -12,7 +12,7 @@ const appenv = {
     WASM_DIR_PATH: process.env.WASM_PATH || "build",
     PARAM_STATE_HOOK_KEY: '4556520100000000000000000000000000000000000000000000000000000001',
     DEFINITIONS_URL: 'https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/definitions/definitions.json',
-    NETWORK: process.env.NETWORK || 'devnet',
+    NETWORK: process.env.NETWORK || 'mainnet',
     NETWORK_ID: null
 }
 
