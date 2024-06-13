@@ -79,7 +79,9 @@ async function main() {
             // Logs are formatted with the timestamp and a log file will be created inside log directory.
             logger.init(appenv.LOG_PATH, appenv.FILE_LOG_ENABLED);
 
-            console.log('Starting the Evernode Xahau reputationd.' + (appenv.IS_DEV_MODE ? ' (in dev mode)' : '') + ' --- patch applied ---');
+            new Setup().checkConfigChanges();
+
+            console.log('Starting the Evernode Xahau reputationd.' + (appenv.IS_DEV_MODE ? ' (in dev mode)' : ''));
             console.log('Data dir: ' + appenv.DATA_DIR);
             console.log('Using message board config: ' + appenv.MB_XRPL_CONFIG_PATH);
 
