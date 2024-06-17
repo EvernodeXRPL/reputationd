@@ -31,11 +31,12 @@ async function main() {
 
     if (process.argv.length >= 3) {
         try {
-            if (process.argv.length >= 5 && process.argv[2] === 'new') {
+            if (process.argv.length >= 6 && process.argv[2] === 'new') {
                 const accountAddress = process.argv[3];
                 const accountSecretPath = process.argv[4];
+                const reimburseFrequency = process.argv[5];
                 const setup = new Setup();
-                setup.newConfig(accountAddress, accountSecretPath);
+                setup.newConfig(accountAddress, accountSecretPath, reimburseFrequency);
             }
             else if (process.argv.length >= 4 && process.argv[2] === 'wait-for-funds') {
                 await new Setup().waitForFunds(process.argv[3], parseFloat(process.argv[4]));
