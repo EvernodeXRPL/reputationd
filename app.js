@@ -45,6 +45,8 @@ async function main() {
                 await new Setup().prepareReputationAccount();
             } else if (process.argv.length >= 4 && process.argv[2] === 'update-config') {
                 // TODO: Remove this in 0.8.4.
+            } else if (process.argv.length >= 3 && process.argv[2] === 'update-reimbursement-config') {
+                await new Setup().updateReimburseConfig(process.argv[3]);
             }
             else if (process.argv.length >= 3 && process.argv[2] === 'upgrade') {
                 await new Setup().upgrade();
@@ -58,7 +60,7 @@ async function main() {
         node index.js version - Print version.
         node index.js new [address] [secretPath] - Create new config files.
         node index.js wait-for-funds [currencyType] [expectedBalance] - Wait until the funds are received.
-        node index.js upgrade [governorAddress] - Upgrade message board data.
+        node index.js upgrade [governorAddress] - Upgrade reputationd data.
         node index.js help - Print help.`);
             }
             else {
