@@ -1,0 +1,20 @@
+{
+    "name": "evernode-host-reputation-hook",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "./node_modules/.bin/eslint sethook.js",
+        "build:hook": "make build",
+        "build:self": "npm i && npm run lint",
+        "build:delegate": "ncc build ./sethook.js --minify -o dist/hook-setup",
+        "build": "rm -rf dist && npm run build:hook && npm run build:self && npm run build:delegate && cp ./build/* dist/hook-setup/",
+        "postinstall": "curl --location 'https://xahau.network' --header 'Content-Type: application/json' --data '{\"method\": \"server_definitions\"} ' | jq '.result' > ./node_modules/xrpl-binary-codec/dist/enums/definitions.json"
+    },
+    "dependencies": {
+        "xrpl-hooks": "2.2.1"
+    },
+    "devDependencies": {
+        "eslint": "8.3.0"
+    }
+}
