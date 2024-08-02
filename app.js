@@ -86,7 +86,7 @@ async function main() {
             console.log('Data dir: ' + appenv.DATA_DIR);
             console.log('Using message board config: ' + appenv.MB_XRPL_CONFIG_PATH);
 
-            const rep = new ReputationD(appenv.CONFIG_PATH, appenv.MB_XRPL_CONFIG_PATH, appenv.INSTANCE_IMAGE);
+            const rep = new ReputationD(appenv.CONFIG_PATH, appenv.MB_XRPL_CONFIG_PATH, appenv.INSTANCE_IMAGE, appenv.TLS_CERT_PATH);
             await rep.init();
         }
         catch (err) {
