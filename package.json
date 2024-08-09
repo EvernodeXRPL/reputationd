@@ -6,7 +6,7 @@
     },
     "dependencies": {
         "archiver": "5.3.1",
-        "evernode-js-client": "0.6.57",
+        "evernode-js-client": "0.6.58",
         "hotpocket-js-client": "0.5.6",
         "libsodium-wrappers": "0.7.9",
         "uuid": "9.0.1",
